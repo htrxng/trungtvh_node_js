@@ -22,15 +22,33 @@ class Employee {
 }
 
 let employeeList: Employee[] = [];
-employeeList.push(new Employee("Nguyen Van A", Gender.MALE, new Date("1990-09-19"), "anguyen@gmail.com",
-    "0123456789"));
-employeeList.push(new Employee("Tran Thi A", Gender.FEMALE, new Date("1991-10-12"), "btran@gmail.com",
-    "0123456790"));
-employeeList.push(new Employee("Huynh An Nhien", Gender.OTHER, new Date("1990-09-19"), "nhienhuynh@gmail.com",
-    "0123456791"));
 
 function showEmployee(employee: Employee) {
     console.log(employee);
 }
 
+function addNewEmployee(newEmployee: Employee) {
+    employeeList.push(newEmployee);
+    console.log("thêm thành công nhân viên mới " + newEmployee.fullname);
+}
+function deleteEmployeeByIndex(index: number) {
+    if (index > employeeList.length || index < 0) {
+        console.log("index truyền vào ko phù hợp với mảng");
+    } else {
+        employeeList.splice(index, 1);
+        console.log("Xoá thành công nhân viên.");
+    }
+}
+
+addNewEmployee(new Employee("Huu Trung", Gender.MALE, new Date("1975-03-15"), "htrung@gmail.com",
+    "09123131231"));
+employeeList.forEach(showEmployee);
+addNewEmployee(new Employee("Nguyen Van A", Gender.MALE, new Date("1990-09-19"), "anguyen@gmail.com",
+    "0123456789"));
+addNewEmployee(new Employee("Tran Thi A", Gender.FEMALE, new Date("1991-10-12"), "btran@gmail.com",
+    "0123456790"));
+addNewEmployee(new Employee("Huynh An Nhien", Gender.OTHER, new Date("1990-09-19"), "nhienhuynh@gmail.com",
+    "0123456791"));
+
+deleteEmployeeByIndex(0);
 employeeList.forEach(showEmployee);
