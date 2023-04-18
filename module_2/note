@@ -1,0 +1,5 @@
+A. biên dịch file .ts
+cach 1: tsc fileName.ts
+cach 2: tsc -t es5 fileName.ts (áp dụng trường hợp yêu cầu phiển bản).
+
+B. Run file js => node fileName.js
